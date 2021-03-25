@@ -5,9 +5,7 @@ const { copy } = require('copy-paste');
 const { sleep } = require('../../util/sleep');
 
 exports.openGithub = async function (repoName, platform, sleepToRead = false) {
-	console.log(
-		`Please create repo for this submodule with name ${repoName} ${platform != 'bitbucket' ? '' : `without readme & gitignore and with default branch master`}`,
-	);
+	console.log(`Please create a repository with name ${repoName} ${platform != 'bitbucket' ? '' : `without readme & gitignore and with default branch master`}`);
 	await copy(repoName);
 	console.log(chalk.blue.bold(`You have it in your clipboard, just paste it on ${platform}`));
 	if (sleepToRead) await sleep(5000);
