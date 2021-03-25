@@ -22,7 +22,7 @@ exports.create = async function (name, options) {
 	await replacePhrases(config);
 	spinner.stop();
 	await openGithub(config.ghRepo, config.repoPlatform.toLowerCase(), config.sleep);
-	if (config.submodules != undefined && config.submodules != []) {
+	if (config.submodules) {
 		const { submodules } = require('../components/extensions/create/submodules/submodules');
 		await submodules(config, spinner);
 	}

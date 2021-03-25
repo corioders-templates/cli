@@ -6,6 +6,7 @@ exports.getAdvanced = async function (name) {
 	config.submodules = [];
 	if (submodules.includes('app')) config = await ask('app', config);
 	if (submodules.includes('server')) config = await ask('server', config);
+	else config.submodules = undefined;
 	return config;
 };
 
