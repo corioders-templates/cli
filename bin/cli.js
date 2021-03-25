@@ -5,6 +5,7 @@ const { run } = require('../src/command/run.js');
 const { program } = require('commander');
 const { update } = require('../src/command/update.js');
 const { install } = require('../src/command/install.js');
+const { registerExtensions } = require('../src/command/extensions/registerExtensions.js');
 
 program.version('0.0.1');
 program
@@ -38,16 +39,6 @@ program
 	});
 program.command('update').alias('u').description('Update template').action(update);
 
-const { VUE_FILE } = require('../src/components/common/paths');
-const { existsSync } = require('fs');
-if (existsSync(VUE_FILE)) {
-	program
-		.command('route <routeName>')
-		.alias('comp')
-		.action((name) => {
-			const { route } = require('../src/command/route');
-			route(name);
-		});
-}
+registerExtensions(program);
 
 program.parse(process.argv);

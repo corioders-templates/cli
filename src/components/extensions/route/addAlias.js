@@ -1,7 +1,7 @@
 const { writeFile, readFile } = require('fs/promises');
 const { existsSync } = require('fs');
 const { join, resolve } = require('path');
-const { PROJECT_DIR, APP_DIR } = require('../common/paths');
+const { PROJECT_DIR, APP_DIR } = require('../../common/paths');
 
 exports.addAlias = async function (alias, dirName) {
 	const isSubmodule = existsSync(resolve(PROJECT_DIR(), '.submodule'));

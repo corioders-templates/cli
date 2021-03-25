@@ -1,6 +1,6 @@
 const { writeFile } = require('fs/promises');
 const { resolve } = require('path');
-const { ROOT_DIR } = require('../../common/paths');
+const { ROOT_DIR } = require('../../../common/paths');
 
 exports.createFiles = async function (fileName, alias, dirName, path) {
 	const files = require(resolve(ROOT_DIR, 'data', 'routes.json'));

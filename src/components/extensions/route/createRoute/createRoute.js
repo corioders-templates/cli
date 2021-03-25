@@ -1,6 +1,6 @@
 const { existsSync } = require('fs');
 const { resolve } = require('path');
-const { PROJECT_DIR, APP_DIR } = require('../../common/paths');
+const { PROJECT_DIR, APP_DIR } = require('../../../common/paths');
 const { createDirs } = require('./createDirs');
 const { createFiles } = require('./createFiles');
 
