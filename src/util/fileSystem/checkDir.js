@@ -13,6 +13,6 @@ exports.checkDir = function (options) {
 function noDir() {
 	const chalk = require('chalk');
 
-	console.error(chalk.red('You have to run this command in project the root dir!'));
+	console.error(chalk.red("You have to run this command in project's root dir!"));
 	return false;
 }
