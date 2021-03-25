@@ -3,7 +3,7 @@ const { PROJECT_DIR, TOOLS_DIR } = require('../common/paths');
 
 exports.clone = async function (selectedUrl, name) {
 	try {
-		await spawn('git', ['clone', selectedUrl, name]);
+		await spawn('git', ['clone', '-b', 'master', '--single-branch', selectedUrl, name]);
 	} catch (error) {
 		console.error(error);
 	}

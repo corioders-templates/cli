@@ -1,7 +1,7 @@
 {
 	"name": "@corioders/cli",
 	"author": "corioders",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
 	"description": "Cli made for creating projects with our templates",
 	"repository": "https://github.com/corioders-templates/cli",
