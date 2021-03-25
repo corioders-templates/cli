@@ -1,10 +1,9 @@
 const { spawn } = require('../../util/spawn');
-const { resolve } = require('path');
-const { PROJECT_DIR, MAIN_REPO, TOOLS_DIR } = require('../common/paths');
+const { PROJECT_DIR, TOOLS_DIR } = require('../common/paths');
 
 exports.clone = async function (selectedUrl, name) {
 	try {
-		await spawn('git', ['clone', selectedUrl, name]);
+		await spawn('git', ['clone', '-b', 'master', '--single-branch', selectedUrl, name]);
 	} catch (error) {
 		console.error(error);
 	}
