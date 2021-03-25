@@ -9,7 +9,6 @@ const { install } = require('./install');
 exports.run = async function (options) {
 	if (!checkDir(options)) return;
 	options = await prepareOptions(options);
-	const submodule = existsSync(resolve(PROJECT_DIR(), '.submodule'));
 
 	await install(options);
 
@@ -25,8 +24,8 @@ exports.run = async function (options) {
 			cwd: TOOLS_DIR(),
 		});
 	} else if (options.hasOwnProperty('app')) {
-		await spawn('yarn', ['start'], { stdio: 'inherit', cwd: !submodule ? APP_DIR() : PROJECT_DIR() });
+		await spawn('yarn', ['start'], { stdio: 'inherit', cwd: APP_DIR() });
 	} else {
-		await spawn('go', ['run', '.'], { stdio: 'inherit', cwd: !submodule ? SERVER_DIR() : PROJECT_DIR() });
+		await spawn('go', ['run', '.'], { stdio: 'inherit', cwd: SERVER_DIR() });
 	}
 };

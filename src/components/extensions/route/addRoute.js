@@ -4,8 +4,7 @@ const { resolve } = require('path');
 const { APP_DIR, PROJECT_DIR } = require('../../common/paths');
 
 exports.addRoute = async function (name, alias, dirName) {
-	const isSubmodule = existsSync(resolve(PROJECT_DIR(), '.submodule'));
-	const ROUTER_PATH = resolve(!isSubmodule ? APP_DIR() : PROJECT_DIR(), 'src', 'router.ts');
+	const ROUTER_PATH = resolve(APP_DIR(), 'src', 'router.ts');
 	let routerString = await readFile(ROUTER_PATH, 'utf-8');
 
 	const includes = routerString.includes('\nconst routes: RouteRecordRaw[] = [');

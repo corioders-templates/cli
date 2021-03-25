@@ -22,10 +22,6 @@ exports.create = async function (name, options) {
 	await replacePhrases(config);
 	spinner.stop();
 	await openGithub(config.ghRepo, config.repoPlatform.toLowerCase(), config.sleep);
-	if (config.submodules != undefined && config.submodules != []) {
-		const { submodules } = require('../components/create/extensions/submodules/submodules');
-		await submodules(config, spinner);
-	}
 	spinner.start();
 	await cleanup(config);
 	await git(config.url, config.name);

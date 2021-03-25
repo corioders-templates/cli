@@ -12,7 +12,6 @@ program
 	.command('create <projectName>')
 	.alias('c')
 	.option('-d, --default', 'Create new project using your default config')
-	.option('-adv, --advanced', 'Create new project with advanced options')
 	.description('Create new project')
 	.action((name, options) => {
 		create(name, options);

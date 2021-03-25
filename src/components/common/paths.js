@@ -20,9 +20,5 @@ exports.TOOLS_DIR = (name) => resolve(this.PROJECT_DIR(name), 'tools');
 exports.SERVER_DIR = (name) => resolve(this.PROJECT_DIR(name), 'server');
 exports.JSON_PATH = (name) => resolve(this.APP_DIR(name), 'package.json');
 
-//submodules
-exports.SUBMODULE = (submoduleName, projectName) => resolve(process.cwd(), projectName, submoduleName);
-exports.MAIN_REPO = (projectName, dir = undefined) => (dir == undefined ? this.SUBMODULE(projectName, projectName) : this.SUBMODULE(projectName, projectName, dir));
-
 //vue
 exports.VUE_FILE = resolve(this.PROJECT_DIR(), '.vue');
